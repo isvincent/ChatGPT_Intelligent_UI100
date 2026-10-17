@@ -1,0 +1,724 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#4f46e5"><title>ChatGPT 智慧介面 100 例｜教師互動教學素材庫</title><style>
+:root{font-family:system-ui,-apple-system,'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#17223c;background:#f5f7ff;--primary:#4f46e5;--line:#e2e7f4;--muted:#64748b;--card:white}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #fbbf24;outline-offset:2px}.top{background:linear-gradient(115deg,#4338ca,#2563eb 60%,#0891b2);color:white;padding:32px max(18px,calc((100vw - 1250px)/2)) 44px}.top h1{font-size:clamp(26px,3vw,40px);margin:10px 0}.top p{max-width:900px;font-size:17px;line-height:1.9}.pill{display:inline-flex;border-radius:30px;padding:6px 12px;background:#ffffff28;font-size:14px}.wrap{max-width:1250px;margin:-23px auto 60px;padding:0 18px}.toolbar,.panel,.side,.tile,.detail{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 28px #202f5b10}.toolbar{padding:18px;display:grid;gap:12px;grid-template-columns:2fr 1fr 1fr;position:relative}.toolbar input,.toolbar select,.field{padding:12px 14px;border:1px solid #cbd5e1;border-radius:12px;width:100%;background:#fff;min-width:0}.buttons{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);border-radius:11px;padding:9px 13px;background:white;color:#29354a;font-weight:650}.btn:hover{background:#eef2ff}.btn.primary{background:var(--primary);border-color:var(--primary);color:white}.btn.primary:hover{background:#3730a3}.btn.teal{background:#0d9488;color:white;border-color:#0d9488}.btn.light{color:#4338ca}.stats{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 17px;min-width:115px}.stat b{font-size:23px;color:#4338ca}.stat span{display:block;font-size:13px;color:var(--muted)}.layout{display:grid;grid-template-columns:1.1fr .9fr;align-items:start;gap:18px}.headrow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.headrow h2{font-size:21px;margin:0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tile{padding:17px;display:flex;flex-direction:column;gap:10px;min-height:216px}.tile h3{font-size:18px;line-height:1.5;margin:0}.tile p{color:#475569;line-height:1.7;margin:0;flex:1;font-size:15px}.tag{font-size:13px;color:#4338ca;background:#eef2ff;padding:5px 9px;border-radius:8px;display:inline-block}.tile .buttons .btn{font-size:14px}.detail{padding:23px;position:sticky;top:12px;max-height:calc(100vh - 25px);overflow:auto}.detail h2{margin:8px 0;font-size:24px}.detail p{line-height:1.8}.detail section{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.detail h3{font-size:17px;margin:0 0 8px}.prompt{font-size:14px;line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere;background:#eef2ff;border:1px solid #dbe4ff;padding:15px;border-radius:12px;max-height:360px;overflow:auto}.small{color:#64748b;font-size:13px;line-height:1.7}.pager{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto}.pager span{font-size:14px}.note{background:#fffbeb;border-left:4px solid #f59e0b;padding:13px;border-radius:8px;line-height:1.7}.panel{padding:20px;margin-top:20px}.panel h2{margin-top:0}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.step{background:#f1f5ff;border-radius:12px;padding:15px;line-height:1.8}.step b{color:#4338ca}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.nav a{text-decoration:none;color:#4338ca;background:white;padding:9px 13px;border-radius:11px;border:1px solid #dce3fa}.checkbox{display:flex;align-items:center;gap:7px}.checkbox input{width:18px;height:18px}.lesson-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}.lesson-row label{display:block;margin-bottom:5px;font-weight:650}.field{margin-top:5px}.hidden{display:none!important}.toast{position:fixed;bottom:18px;right:18px;background:#0f172a;color:white;padding:12px 19px;border-radius:12px;z-index:5;box-shadow:0 4px 20px #0004}.foot{text-align:center;color:#64748b;padding:25px 10px;font-size:14px}html{scroll-behavior:smooth}body.dark{--card:#17233d;--line:#314361;--muted:#a7b8ce;background:#0e1729;color:#e8edf8}body.dark .tile p,body.dark .small{color:#b1c1d7}body.dark .tag,body.dark .prompt,body.dark .step{background:#233557;color:#d7ddff;border-color:#36517c}body.dark .btn{background:#253858;color:#f5f5ff}body.dark .btn.primary{background:#504fe2}body.dark .btn.teal{background:#0f766e}body.dark .stat{background:#17233d}body.dark input,body.dark select,body.dark textarea{background:#233557;color:#fff;border-color:#47607e}body.dark .note{background:#4a371d;color:#ffedc5}@media(max-width:1040px){.layout{grid-template-columns:1fr}.detail{position:static;max-height:none}.toolbar{grid-template-columns:1fr 1fr}.toolbar input{grid-column:1/-1}}@media(max-width:650px){.toolbar{grid-template-columns:1fr}.toolbar input{grid-column:auto}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.lesson-row{grid-template-columns:1fr}.top{padding:24px 16px 43px}.tile{min-height:unset}.detail{padding:16px}}@media print{.top,.toolbar,.nav,.tile .buttons,.detail .buttons,.pager,.stats,#planner,.foot,.no-print{display:none!important}.wrap{margin:0;max-width:none}.layout{display:block}.cards{display:none}.detail{border:none;box-shadow:none;overflow:visible;max-height:none}.prompt{max-height:none;overflow:visible;background:white;color:black}.detail{display:block}}
+</style></head><body><header class="top"><span class="pill">教師研習 × 學科探究 × 生成式 AI</span><h1>✨ ChatGPT 智慧介面 100 例</h1><p>從互動模擬、科學實驗、藝術創作到素養評量，完整收錄 100 個不重複主題及專屬實作提示詞。檢索、收藏、備課、複製與批次匯出，全部整合在一個可離線開啟的教學網站。</p><div class="buttons"><button class="btn" onclick="document.querySelector('#catalog').scrollIntoView()">🔎 探索範例</button><button class="btn" onclick="document.querySelector('#guide').scrollIntoView()">📖 教學指南</button><button class="btn" onclick="document.querySelector('#planner').scrollIntoView()">📋 備課工具</button><button class="btn" onclick="toggleDark()">🌓 深淺色切換</button></div></header><main class="wrap"><div class="toolbar" id="catalog"><input type="search" id="search" placeholder="搜尋主題、內容、關鍵字（例如：物理、AI、酸鹼、圖書）" aria-label="搜尋範例"><select id="category" aria-label="學科分類"><option value="">全部學科</option></select><select id="view" aria-label="顯示方式"><option value="all">全部範例</option><option value="favorites">我的收藏</option><option value="planned">備課清單</option><option value="new">新增 71～100</option></select><div class="buttons" style="grid-column:1/-1"><button class="btn" onclick="randomPick()">🎲 隨機靈感</button><button class="btn" onclick="exportPrompts('current')">⬇ 匯出篩選提示詞 TXT</button><button class="btn" onclick="exportPrompts('all')">⬇ 全部 100 例 TXT</button><button class="btn" onclick="exportCSV()">⬇ 匯出 CSV</button><button class="btn" onclick="exportBackup()">💾 備份收藏與備課</button><button class="btn" onclick="document.getElementById('importFile').click()">📥 匯入備份</button><input id="importFile" class="hidden" type="file" accept="application/json,.json" onchange="importBackup(this)"></div></div><div class="stats"><div class="stat"><b id="countAll">100</b><span>收錄範例</span></div><div class="stat"><b id="countFiltered">100</b><span>目前符合</span></div><div class="stat"><b id="countFav">0</b><span>已收藏</span></div><div class="stat"><b id="countPlan">0</b><span>備課清單</span></div><div class="stat"><b id="countCat">0</b><span>領域類別</span></div></div><div class="nav"><a href="#guide">使用教學</a><a href="#catalog">案例目錄</a><a href="#planner">教案規劃</a><a href="#quality">作品檢核</a></div><div class="layout"><div><div class="headrow"><h2>🗂 範例總覽</h2><span class="small" id="range"></span></div><div class="cards" id="cards"></div><div class="pager"><button class="btn" id="prev" onclick="goPage(-1)">← 上一頁</button><span id="pagerInfo"></span><button class="btn" id="next" onclick="goPage(1)">下一頁 →</button></div></div><aside class="detail" id="detail" aria-live="polite"></aside></div><section class="panel" id="guide"><h2>📖 完整使用教學</h2><div class="steps"><div class="step"><b>01｜選題</b><div>在分類或關鍵字搜尋中找到合適主題，閱讀教學情境與所需互動功能。</div></div><div class="step"><b>02｜複製提示詞</b><div>選擇完整提示詞或編輯個別參數後複製，貼到 ChatGPT 新對話。</div></div><div class="step"><b>03｜操作驗證</b><div>檢查滑桿、圖表、公式、模型限制，確認不是只展示靜態畫面。</div></div><div class="step"><b>04｜教學評量</b><div>設計預測、操作、觀察、解釋與反思，蒐集學習歷程與學習證據。</div></div></div><h3>教師研習建議流程（50 分鐘）</h3><p>5 分鐘導入展示 → 10 分鐘案例操作與預測 → 15 分鐘個別教師挑選主題並建立介面 → 10 分鐘小組互測及回饋 → 10 分鐘改寫提示詞、設計教學評量。</p><div class="note">網站本身是「範例與提示詞教學資料庫」，不是 100 個已完成的模擬程式。按「開啟 ChatGPT」會前往 ChatGPT 網站，請先複製提示詞並貼上；離線 HTML 無法直接替使用者送出 ChatGPT 訊息。</div><h3>提示詞共同結構</h3><p>角色與學習對象 → 主題及核心互動 → 介面設計與裝置支援 → 真實運算、查證與模型限制 → 探究問題 → 含解析的自我檢測 → 學習回饋。每一例另含專屬功能及驗收條件，可按單元需求微調。</p></section><section class="panel" id="planner"><h2>📋 教師備課工作台</h2><p>請先在範例卡片按「＋加入備課」，再調整課程欄位並匯出教案草稿。資料存在此瀏覽器中，清除瀏覽資料後可能消失，建議定期備份。</p><div class="lesson-row"><div><label for="lessonName">課程名稱</label><input class="field" id="lessonName" placeholder="例如：高一數學探究" oninput="saveDraft()"></div><div><label for="lessonTime">課程節數</label><select class="field" id="lessonTime" onchange="saveDraft()"><option>1 節（50 分）</option><option>2 節（100 分）</option><option>3 節（150 分）</option><option>專題／自主學習</option></select></div><div><label for="lessonGoal">學習目標</label><textarea class="field" id="lessonGoal" rows="3" placeholder="學生能操作參數、解釋結果與檢驗模型…" oninput="saveDraft()"></textarea></div><div><label for="lessonAssessment">評量方式</label><textarea class="field" id="lessonAssessment" rows="3" placeholder="預測單、截圖、分析紀錄、同儕討論…" oninput="saveDraft()"></textarea></div></div><div class="small" id="plannedNames"></div><div class="buttons" style="margin-top:12px"><button class="btn primary" onclick="exportLesson()">⬇ 匯出備課教案 TXT</button><button class="btn" onclick="setView('planned')">檢視備課清單</button><button class="btn" onclick="printCurrent()">🖨 列印目前範例</button></div></section><section class="panel" id="quality"><h2>✅ 智慧介面作品檢核規準</h2><p>可作為教師研習的作品互評、學生自評或課堂成果檢核使用。</p><div id="rubric"></div><p class="small" id="qualityScore"></p><button class="btn" onclick="resetRubric()">重設檢核</button></section><footer class="foot">智慧介面 100 例教學網站｜繁體中文・臺灣教學情境｜資料整理日期 2026-10-17｜單一 HTML，免安裝、可離線使用</footer></main><div class="toast hidden" id="toast" role="status"></div>
+<script id="dataset" type="application/json">[
+  {
+    "id": 1,
+    "title": "拋體運動互動實驗室",
+    "category": "數學與物理",
+    "description": "調整初速度、發射角度與重力加速度，觀察拋物線軌跡、飛行時間、最高點及水平射程。",
+    "requirements": "使用理想無空氣阻力模型，提供公式推導、即時 SVG 軌跡與三組探究任務。"
+  },
+  {
+    "id": 2,
+    "title": "二次函數圖形探索",
+    "category": "數學與物理",
+    "description": "透過 a、b、c 滑桿操作 y=ax²+bx+c，觀察開口、頂點、對稱軸、根與截距。",
+    "requirements": "圖形與數值即時更新，提供頂點式轉換及判別式說明。"
+  },
+  {
+    "id": 3,
+    "title": "蒙提霍爾機率遊戲",
+    "category": "數學與物理",
+    "description": "以三扇門模擬選獎品、主持人開門、維持選擇或換門及重複實驗。",
+    "requirements": "統計兩種策略勝率，解釋條件機率，主持人須知道答案且固定開啟空門。"
+  },
+  {
+    "id": 4,
+    "title": "骰子機率與大數法則",
+    "category": "數學與物理",
+    "description": "模擬擲骰 10、100、1000 及 10000 次，顯示各點數頻率與理論機率。",
+    "requirements": "可選單顆或雙顆骰子，圖表即時更新並解釋大數法則。"
+  },
+  {
+    "id": 5,
+    "title": "河內塔遞迴挑戰",
+    "category": "數學與物理",
+    "description": "用可操作的三根柱子移動不同大小圓盤，記錄步數與提示。",
+    "requirements": "合法移動檢查、最少步數 2^n-1、遞迴策略與挑戰分級。"
+  },
+  {
+    "id": 6,
+    "title": "容斥原理互動圖解",
+    "category": "數學與物理",
+    "description": "調整兩個或三個集合的人數、交集，觀察文氏圖及總人數。",
+    "requirements": "檢查集合數據的一致性，提供公式、生活情境及演算解析。"
+  },
+  {
+    "id": 7,
+    "title": "三角形內角和實驗",
+    "category": "數學與物理",
+    "description": "調整三角形頂點，觀察三內角與角度和。",
+    "requirements": "使用 SVG 拖曳或替代滑桿，呈現角度計算與幾何證明。"
+  },
+  {
+    "id": 8,
+    "title": "畢氏定理拼圖",
+    "category": "數學與物理",
+    "description": "改變直角三角形兩股長，觀察三邊正方形的面積關係。",
+    "requirements": "以圖形面積、數值及拼圖方式說明 a²+b²=c²。"
+  },
+  {
+    "id": 9,
+    "title": "圓面積動態推導",
+    "category": "數學與物理",
+    "description": "將圓切成不同數量的扇形，重新排列形成近似平行四邊形。",
+    "requirements": "調整扇形數量並以面積守恆說明 πr²。"
+  },
+  {
+    "id": 10,
+    "title": "圓錐側面展開",
+    "category": "數學與物理",
+    "description": "調整圓錐底面半徑與母線長，呈現圓錐和扇形展開圖。",
+    "requirements": "即時顯示扇形半徑、弧長與圓心角。"
+  },
+  {
+    "id": 11,
+    "title": "曼德博集合碎形探索",
+    "category": "數學與物理",
+    "description": "探索 Mandelbrot set，可操作縮放、平移、迭代次數與色彩配置。",
+    "requirements": "使用 z(n+1)=z(n)²+c 計算逃逸時間，顯示碎形，解釋邊界與運算限制。"
+  },
+  {
+    "id": 12,
+    "title": "數學藝術與參數曲線",
+    "category": "數學與物理",
+    "description": "以正弦、餘弦和參數方程生成藝術曲線，可調頻率、振幅及相位。",
+    "requirements": "即時 SVG 曲線、圖形變化比較及公式與視覺對應。"
+  },
+  {
+    "id": 13,
+    "title": "雙擺混沌模擬",
+    "category": "數學與物理",
+    "description": "調整雙擺的長度、質量與初始角度，觀察軌跡及初始條件敏感性。",
+    "requirements": "以可執行數值積分模型呈現，註明模型假設及誤差。"
+  },
+  {
+    "id": 14,
+    "title": "聲波干涉與節拍",
+    "category": "數學與物理",
+    "description": "調整兩道聲波頻率、振幅與相位，觀察波形疊加、干涉與節拍。",
+    "requirements": "即時波形視覺化，顯示節拍頻率與波形合成。"
+  },
+  {
+    "id": 15,
+    "title": "行星軌道模擬器",
+    "category": "數學與物理",
+    "description": "調整行星運轉速度、軌道尺寸與時間，觀察公轉及克卜勒定律。",
+    "requirements": "區分示意與物理定量模型，附真實天文數據查證來源。"
+  },
+  {
+    "id": 16,
+    "title": "電路與並聯電阻",
+    "category": "數學與物理",
+    "description": "調整電壓與各支路電阻，觀察電流分配、總電阻及功率。",
+    "requirements": "採理想直流電阻電路，正確使用歐姆定律及並聯公式。"
+  },
+  {
+    "id": 17,
+    "title": "齒輪傳動與腳踏車",
+    "category": "數學與物理",
+    "description": "控制大小齒輪齒數、轉速及腳踏車前後齒盤，觀察轉向與傳動比。",
+    "requirements": "顯示齒比、輪轉速與估算車速，動畫與數值同步。"
+  },
+  {
+    "id": 18,
+    "title": "3D 幾何切割探索",
+    "category": "數學與物理",
+    "description": "選擇立方體、圓柱與圓錐，以切面位置和角度觀察截面形狀。",
+    "requirements": "提供可執行截面幾何演算或清楚標示為簡化示意。"
+  },
+  {
+    "id": 19,
+    "title": "視覺錯覺實驗室",
+    "category": "藝術與設計",
+    "description": "切換大小、色彩、方向等視覺錯覺，比較觀察結果。",
+    "requirements": "提供互動滑桿、前後比較與視知覺原理解說。"
+  },
+  {
+    "id": 20,
+    "title": "鏡面成像與鏡面公式",
+    "category": "數學與物理",
+    "description": "調整物距及焦距，觀察球面鏡成像位置、放大率、虛實像。",
+    "requirements": "使用近軸光學公式與正確符號慣例。"
+  },
+  {
+    "id": 21,
+    "title": "元素週期表探索",
+    "category": "自然科學",
+    "description": "依原子序、元素族、週期、分類搜尋元素，查看性質及日常應用。",
+    "requirements": "互動元素表，提供元素介紹、分類切換及自我測驗。"
+  },
+  {
+    "id": 22,
+    "title": "DNA 鹼基配對遊戲",
+    "category": "自然科學",
+    "description": "讓學生操作 A、T、C、G 的互補鹼基配對，組合 DNA 雙股。",
+    "requirements": "即時判定 A-T、C-G，提供分子結構與遺傳資訊的基礎說明。"
+  },
+  {
+    "id": 23,
+    "title": "板塊運動實驗室",
+    "category": "自然科學",
+    "description": "切換張裂、聚合與錯動板塊邊界，觀察地形、地震與火山。",
+    "requirements": "分層示意、位移控制、真實案例及探究題，區分科學模型與真實情況。"
+  },
+  {
+    "id": 24,
+    "title": "恆星生命週期探索",
+    "category": "自然科學",
+    "description": "逐步探索星雲、主序星、紅巨星、白矮星及大質量恆星演化。",
+    "requirements": "以不同初始質量區分演化路徑，展示超新星、中子星與黑洞等可能結果。"
+  },
+  {
+    "id": 25,
+    "title": "地球水循環模擬",
+    "category": "自然科學",
+    "description": "操作蒸發、凝結、降水、入滲及逕流，觀察水循環過程。",
+    "requirements": "將水量變化與概念圖連結，清楚說明簡化模型。"
+  },
+  {
+    "id": 26,
+    "title": "全球氣候與碳排放",
+    "category": "自然科學",
+    "description": "調整能源結構、排放減量及時間尺度，探索碳排情境。",
+    "requirements": "使用明示的教育用簡化模型，區分模擬結果與實際氣候預測。"
+  },
+  {
+    "id": 27,
+    "title": "太陽系互動模型",
+    "category": "自然科學",
+    "description": "切換太陽系行星，觀察相對大小、軌道及基本特徵。",
+    "requirements": "可切換尺寸與距離比例模式，避免不同量尺混用。"
+  },
+  {
+    "id": 28,
+    "title": "全球地震與板塊地圖",
+    "category": "自然科學",
+    "description": "探索主要板塊邊界、環太平洋火山帶及地震分布。",
+    "requirements": "互動地理位置與構造說明，資料來源與日期需標明。"
+  },
+  {
+    "id": 29,
+    "title": "世界歷史時間軸",
+    "category": "歷史與社會",
+    "description": "依古文明、古典時代、中世紀、近代及現代切換歷史事件。",
+    "requirements": "每一事件包含日期、摘要、背景、因果關係與檢測題。"
+  },
+  {
+    "id": 30,
+    "title": "臺灣歷史互動時間軸",
+    "category": "歷史與社會",
+    "description": "依年代探索臺灣的重要歷史事件與社會變遷。",
+    "requirements": "提供背景、事件因果、主題篩選及探究問題，使用可查證資料。"
+  },
+  {
+    "id": 31,
+    "title": "絲路文明故事地圖",
+    "category": "歷史與社會",
+    "description": "沿絲路選擇城市與路線，探索商品、技術、宗教及文化交流。",
+    "requirements": "互動路線與故事節點，區分歷史史實和情境敘事。"
+  },
+  {
+    "id": 32,
+    "title": "世界時區探索",
+    "category": "歷史與社會",
+    "description": "選擇世界城市並調整基準時間，比較不同時區的當地時間。",
+    "requirements": "使用正確 UTC 偏移及夏令時間規則，標示基準日期。"
+  },
+  {
+    "id": 33,
+    "title": "所有權與物權特性",
+    "category": "歷史與社會",
+    "description": "透過生活案例判斷所有權、物權特性、使用及處分等概念。",
+    "requirements": "依臺灣民法查證，提供案例選項、解析與生活應用。"
+  },
+  {
+    "id": 34,
+    "title": "公民法律十題測驗",
+    "category": "歷史與社會",
+    "description": "進行所有權與物權特性十題四選一測驗。",
+    "requirements": "逐題作答、立即解析、計分、錯題複習及反思，題目附法條依據。"
+  },
+  {
+    "id": 35,
+    "title": "正義與道德兩難",
+    "category": "歷史與社會",
+    "description": "操作電車難題、公平分配及公共選擇，體驗不同倫理判斷。",
+    "requirements": "呈現不同倫理理論及利害關係人立場，不把單一價值立場當唯一標準。"
+  },
+  {
+    "id": 36,
+    "title": "囚徒困境策略競賽",
+    "category": "歷史與社會",
+    "description": "選擇合作或背叛，與不同策略對手進行多回合競賽。",
+    "requirements": "顯示報酬矩陣、累積分數及策略分析。"
+  },
+  {
+    "id": 37,
+    "title": "公共預算分配模擬",
+    "category": "歷史與社會",
+    "description": "分配教育、醫療、交通及環境預算，觀察政策權衡。",
+    "requirements": "以教育用途的規則呈現預算約束、不同群體影響與權衡討論。"
+  },
+  {
+    "id": 38,
+    "title": "假訊息傳播模擬",
+    "category": "歷史與社會",
+    "description": "調整轉傳比例、查證率及平台介入程度，觀察訊息擴散。",
+    "requirements": "以可說明的簡化擴散模型模擬，提供媒體識讀及事實查證任務。"
+  },
+  {
+    "id": 39,
+    "title": "未滿十八歲社群媒體議題",
+    "category": "歷史與社會",
+    "description": "探討未滿十八歲是否應限制社群媒體使用，體驗政策辯論與角色觀點。",
+    "requirements": "比較權利、保護、教育與執行成本，提供案例分析及反思。"
+  },
+  {
+    "id": 40,
+    "title": "AI 生成內容標示議題",
+    "category": "歷史與社會",
+    "description": "探究 AI 生成內容是否應強制標示，模擬平台、創作者、使用者立場。",
+    "requirements": "提供議題論證、判斷及證據查核；法規現況需核實。"
+  },
+  {
+    "id": 41,
+    "title": "SDGs 十七項目標探索",
+    "category": "歷史與社會",
+    "description": "切換聯合國十七項永續發展目標，查看目標、案例及行動策略。",
+    "requirements": "每項提供圖卡、說明、探究題及實際行動任務。"
+  },
+  {
+    "id": 42,
+    "title": "未來永續城市規劃",
+    "category": "歷史與社會",
+    "description": "配置住宅、綠地、交通與能源設施，觀察城市的碳排、滿意度與預算。",
+    "requirements": "使用公開的計分規則與資源限制，支持多回合決策。"
+  },
+  {
+    "id": 43,
+    "title": "曼陀羅幾何設計器",
+    "category": "藝術與設計",
+    "description": "調整對稱數、圖形層數、花瓣大小與色彩，產生曼陀羅幾何藝術。",
+    "requirements": "即時 SVG 預覽，附旋轉對稱與幾何變換解說。"
+  },
+  {
+    "id": 44,
+    "title": "互動色彩搭配實驗室",
+    "category": "藝術與設計",
+    "description": "調整色相、飽和度、亮度，產生互補色、類似色及三角色。",
+    "requirements": "顯示 HEX 色票、配色預覽、對比度與視覺應用。"
+  },
+  {
+    "id": 45,
+    "title": "蒙德里安風格創作",
+    "category": "藝術與設計",
+    "description": "調整格線位置、區域比例及幾何色塊，創作抽象構圖。",
+    "requirements": "生成可操作的格線畫布及構圖分析，說明藝術背景。"
+  },
+  {
+    "id": 46,
+    "title": "像素角色設計工坊",
+    "category": "藝術與設計",
+    "description": "在方格畫布中以色票創作像素角色，切換橡皮擦、筆刷與格數。",
+    "requirements": "即時網格操作、預覽和座標概念學習，可輸出設計資料。"
+  },
+  {
+    "id": 47,
+    "title": "數學萬花筒",
+    "category": "藝術與設計",
+    "description": "調整反射對稱數、線條、旋轉角與色彩，觀察圖案重複與變化。",
+    "requirements": "即時向量預覽與幾何對稱概念解說。"
+  },
+  {
+    "id": 48,
+    "title": "字體排版實驗室",
+    "category": "藝術與設計",
+    "description": "選擇字級、行高、字距、對齊及字型風格，觀察文章版面變化。",
+    "requirements": "提供即時排版預覽及可讀性比較。"
+  },
+  {
+    "id": 49,
+    "title": "圖書館世界導覽",
+    "category": "文化與生活",
+    "description": "逐一探索六座著名圖書館，每座顯示真實照片、所在地及兩項經查證的特色。",
+    "requirements": "提供上一座、下一座、比較及閱讀延伸，照片應與場館相符。"
+  },
+  {
+    "id": 50,
+    "title": "世界名畫互動導覽",
+    "category": "文化與生活",
+    "description": "逐一探索六幅著名畫作，查看原作、作者、背景與構圖。",
+    "requirements": "每幅附觀察問題、切換導覽與可信來源。"
+  },
+  {
+    "id": 51,
+    "title": "被討厭的勇氣推薦海報",
+    "category": "文化與生活",
+    "description": "探索《被討厭的勇氣》的核心概念，互動選取書籍介紹與推薦內容。",
+    "requirements": "提供 A4 直式現代雜誌風格的視覺化推薦內容與可閱讀文案。"
+  },
+  {
+    "id": 52,
+    "title": "檸檬菠菜義大利麵食譜",
+    "category": "文化與生活",
+    "description": "提供快速食譜，切換二人或四人份，所有食材用量同步換算。",
+    "requirements": "逐項勾選食材、步驟，提供烹調時間與採買清單。"
+  },
+  {
+    "id": 53,
+    "title": "京都一日遊行程規劃",
+    "category": "文化與生活",
+    "description": "安排清水寺、八坂神社、祇園及伏見稻荷等景點。",
+    "requirements": "可切換行程順序、停留時間與交通方式，地圖資訊及營業時間應查證。"
+  },
+  {
+    "id": 54,
+    "title": "互動故事地圖",
+    "category": "文化與生活",
+    "description": "以地圖節點講述地理、旅行或文化故事，選點觀看照片與敘事。",
+    "requirements": "提供故事順序、探索模式與至少三個理解題。"
+  },
+  {
+    "id": 55,
+    "title": "足球越位判定實驗",
+    "category": "文化與生活",
+    "description": "調整傳球球員、接球球員及倒數第二名防守球員位置，判斷越位。",
+    "requirements": "考慮傳球瞬間、球的位置、所在半場及是否參與進攻，說明越位位置不等同越位犯規。"
+  },
+  {
+    "id": 56,
+    "title": "複利儲蓄模擬器",
+    "category": "財務與數據",
+    "description": "調整初始本金、每月投入、年報酬率及投資年數。",
+    "requirements": "即時資產曲線、累積投入、預估增值及不同情境比較，說明報酬不保證。"
+  },
+  {
+    "id": 57,
+    "title": "財務自由規劃器",
+    "category": "財務與數據",
+    "description": "輸入現有資產、月存額、支出及假設報酬，估算財務目標時程。",
+    "requirements": "明列通膨、報酬和提領假設，提供不同風險情境。"
+  },
+  {
+    "id": 58,
+    "title": "班級成績分析儀表板",
+    "category": "財務與數據",
+    "description": "以三十位示範學生資料分析平均、中位數、及格率及分布。",
+    "requirements": "支援區間篩選、圖表更新與統計解釋，不使用真實個資。"
+  },
+  {
+    "id": 59,
+    "title": "人口結構與人口金字塔",
+    "category": "財務與數據",
+    "description": "調整年齡分組、性別結構及人口變化情境，觀察人口金字塔。",
+    "requirements": "區分實際統計與示範數據，討論高齡化與人口政策。"
+  },
+  {
+    "id": 60,
+    "title": "機率遊樂園",
+    "category": "財務與數據",
+    "description": "比較轉盤、抽球與擲骰等機率遊戲，觀察事件發生頻率。",
+    "requirements": "以合法的教學抽樣模擬計算理論與實驗機率。"
+  },
+  {
+    "id": 61,
+    "title": "泡沫排序動畫實驗",
+    "category": "資訊與 AI",
+    "description": "輸入一組整數，逐步觀看相鄰元素比較、交換及排序完成。",
+    "requirements": "提供速度控制、比較次數、交換次數及時間複雜度。"
+  },
+  {
+    "id": 62,
+    "title": "迷宮搜尋演算法",
+    "category": "資訊與 AI",
+    "description": "以格子迷宮設定起點、終點及障礙物，比較 BFS 與 DFS 搜尋。",
+    "requirements": "逐步動畫、拜訪順序及路徑長度，說明最短路徑條件。"
+  },
+  {
+    "id": 63,
+    "title": "生成式 AI 心智圖",
+    "category": "資訊與 AI",
+    "description": "以可展開或收合的節點探索生成式 AI 的概念、技術、應用、風險與資源。",
+    "requirements": "提供多層節點、概念關聯、搜尋與探究任務。"
+  },
+  {
+    "id": 64,
+    "title": "AI 推理偵探社",
+    "category": "資訊與 AI",
+    "description": "在模擬案件中查看線索、比對證詞並找出矛盾。",
+    "requirements": "具備完整固定謎底、可檢驗的推理流程與即時回饋。"
+  },
+  {
+    "id": 65,
+    "title": "18 週自主學習規劃器",
+    "category": "學習與教學",
+    "description": "輸入自主學習主題、學習目標與每週工作量，生成十八週學習計畫。",
+    "requirements": "含進度檢核、階段成果、學習反思與成果展示欄位。"
+  },
+  {
+    "id": 66,
+    "title": "互動測驗與錯題本",
+    "category": "學習與教學",
+    "description": "針對指定高中主題提供十題四選一測驗、立即回饋與得分統計。",
+    "requirements": "每題有正確答案、詳解、重做與錯題練習。"
+  },
+  {
+    "id": 67,
+    "title": "四學協作教學任務",
+    "category": "學習與教學",
+    "description": "依自學、共學、互學、導學規劃高中課堂任務。",
+    "requirements": "結合學習目標、證據查核、AI 輔助與形成性評量。"
+  },
+  {
+    "id": 68,
+    "title": "認知信念行動反思",
+    "category": "學習與教學",
+    "description": "以信念、認知與行動三個層次，引導學生從公共議題形成反思。",
+    "requirements": "提供情境選擇、觀點比較、行動方案與學習歷程。"
+  },
+  {
+    "id": 69,
+    "title": "人生選擇模擬島",
+    "category": "學習與教學",
+    "description": "面對升學、時間管理與資源分配情境，選擇不同決策。",
+    "requirements": "以明示的規則模擬後果，提供討論與個人反思，不將選擇簡化為唯一正解。"
+  },
+  {
+    "id": 70,
+    "title": "線性規劃可行域探索",
+    "category": "數學與物理",
+    "description": "調整目標函數與線性不等式限制，觀察可行域、頂點及最適解。",
+    "requirements": "正確繪製半平面交集，檢查無解、無界與多重最適解案例。"
+  },
+  {
+    "id": 71,
+    "title": "酸鹼滴定模擬實驗室",
+    "category": "化學",
+    "description": "調整酸、鹼濃度與滴定體積，觀察 pH 曲線、當量點與指示劑顏色。",
+    "requirements": "區分強酸強鹼與弱酸強鹼案例，正確運算酸鹼平衡，加入未知濃度推算挑戰。"
+  },
+  {
+    "id": 72,
+    "title": "化學反應速率實驗",
+    "category": "化學",
+    "description": "調整溫度、濃度、表面積及催化劑條件，觀察反應速率變化。",
+    "requirements": "以明示的簡化速率式與碰撞理論解釋變化，不將不同因素當成必然等比例影響。"
+  },
+  {
+    "id": 73,
+    "title": "勒沙特列原理模擬",
+    "category": "化學",
+    "description": "改變化學平衡系統的濃度、壓力及溫度，觀察平衡移動。",
+    "requirements": "使用明確可計算的平衡反應，區分平衡位置、平衡常數及反應商。"
+  },
+  {
+    "id": 74,
+    "title": "電子組態互動實驗",
+    "category": "化學",
+    "description": "依原子序填入軌域電子，觀察電子排布與元素週期性。",
+    "requirements": "提供軌域圖、洪德定則、泡利不相容原理與逐步檢核。"
+  },
+  {
+    "id": 75,
+    "title": "分子立體結構建模",
+    "category": "化學",
+    "description": "選擇分子，操作鍵結與孤電子對數量，觀察 VSEPR 分子形狀。",
+    "requirements": "顯示電子域幾何、分子幾何及典型鍵角，提供可旋轉視圖或方向控制。"
+  },
+  {
+    "id": 76,
+    "title": "色層分析虛擬實驗",
+    "category": "化學",
+    "description": "選擇混合色素、溶劑與展開距離，觀察色素分離結果。",
+    "requirements": "顯示溶劑前緣、斑點距離與 Rf 計算，採教育用途示範數據。"
+  },
+  {
+    "id": 77,
+    "title": "細胞膜與滲透作用",
+    "category": "生物",
+    "description": "調整細胞內外溶質濃度，觀察水分移動與細胞體積變化。",
+    "requirements": "區分動物與植物細胞，解釋低張、高張及等張溶液。"
+  },
+  {
+    "id": 78,
+    "title": "孟德爾遺傳方格",
+    "category": "生物",
+    "description": "選擇雙親基因型，操作單因子及雙因子遺傳配對。",
+    "requirements": "自動生成龐尼特方格、基因型和表現型比例，明示完全顯性等假設。"
+  },
+  {
+    "id": 79,
+    "title": "生態食物網模擬",
+    "category": "生物",
+    "description": "增減生產者、初級消費者、捕食者與分解者，觀察族群關係。",
+    "requirements": "提供可解釋的簡化族群變動規則，顯示連鎖影響及能量流向。"
+  },
+  {
+    "id": 80,
+    "title": "神經訊號傳導動畫",
+    "category": "生物",
+    "description": "逐步控制刺激、去極化、再極化與不反應期，觀察動作電位。",
+    "requirements": "提供膜電位曲線、離子通道狀態與傳導方向說明。"
+  },
+  {
+    "id": 81,
+    "title": "自然選擇演化模擬",
+    "category": "生物",
+    "description": "調整環境顏色、族群性狀及捕食壓力，觀察多世代性狀頻率。",
+    "requirements": "以明確的存活與繁殖機率建立模型，說明演化發生在族群。"
+  },
+  {
+    "id": 82,
+    "title": "人體消化系統探索",
+    "category": "生物",
+    "description": "依食物路徑切換口腔、胃、小腸、大腸等器官，觀察消化與吸收。",
+    "requirements": "呈現器官功能、酵素作用、營養分解及互動排序測驗。"
+  },
+  {
+    "id": 83,
+    "title": "都卜勒效應實驗室",
+    "category": "物理",
+    "description": "調整波源速度、觀察者速度與波速，觀察波前密度和接收頻率。",
+    "requirements": "採用適用於聲波的正確公式，區分接近與遠離，限制在有效物理條件內。"
+  },
+  {
+    "id": 84,
+    "title": "電磁感應實驗",
+    "category": "物理",
+    "description": "調整磁鐵速度、磁場強度與線圈匝數，觀察感應電動勢。",
+    "requirements": "根據法拉第定律及楞次定律展示磁通量變化與電流方向。"
+  },
+  {
+    "id": 85,
+    "title": "雲霄飛車能量守恆",
+    "category": "物理",
+    "description": "調整軌道高度、質量、初速及摩擦，觀察位能、動能與熱耗散。",
+    "requirements": "顯示能量堆疊圖及速度變化，檢查車輛是否能通過軌道。"
+  },
+  {
+    "id": 86,
+    "title": "熱傳導與溫度變化",
+    "category": "物理",
+    "description": "切換材料、厚度、兩端溫度與時間，觀察熱量傳遞。",
+    "requirements": "使用傅立葉定律的簡化模型，呈現溫度梯度與熱流方向。"
+  },
+  {
+    "id": 87,
+    "title": "浮力與阿基米德原理",
+    "category": "物理",
+    "description": "調整物體密度、體積與液體密度，觀察浮沉及排開液體體積。",
+    "requirements": "即時計算浮力、重力及浸入比例，區分漂浮與完全沉沒。"
+  },
+  {
+    "id": 88,
+    "title": "地震預警時間模擬",
+    "category": "地球科學",
+    "description": "調整震央距離、震源深度與地震波速，觀察 P 波、S 波抵達。",
+    "requirements": "估算理想化預警時間差，清楚區分地震波到時與實際警報延遲。"
+  },
+  {
+    "id": 89,
+    "title": "鋒面與天氣系統模擬",
+    "category": "地球科學",
+    "description": "操作冷鋒、暖鋒及氣團移動，觀察雲、降雨與氣溫改變。",
+    "requirements": "搭配剖面動畫及簡化天氣圖，區分典型現象與實際預報。"
+  },
+  {
+    "id": 90,
+    "title": "海洋環流探索",
+    "category": "地球科學",
+    "description": "調整海水溫度、鹽度及風向，觀察表層與深層海流。",
+    "requirements": "呈現密度與風驅動因素，解釋熱鹽環流與地轉效應的不同。"
+  },
+  {
+    "id": 91,
+    "title": "二進位與數位編碼",
+    "category": "資訊科技",
+    "description": "輸入十進位數字或文字，觀看二進位、十六進位及字元編碼轉換。",
+    "requirements": "提供位元切換、即時換算、Unicode／UTF-8 說明與編碼挑戰。"
+  },
+  {
+    "id": 92,
+    "title": "密碼學加密解密工坊",
+    "category": "資訊科技",
+    "description": "使用凱撒密碼、替換密碼等古典方法操作加密和解密。",
+    "requirements": "即時展示密文變化、密鑰設定與暴力破解示例，說明不可用於真實安全保護。"
+  },
+  {
+    "id": 93,
+    "title": "SQL 資料庫查詢實驗",
+    "category": "資訊科技",
+    "description": "利用示範學生或圖書資料表，操作 SELECT、WHERE、ORDER BY 等查詢。",
+    "requirements": "在安全的本地示範資料上即時顯示查詢結果、語法說明與錯誤回饋。"
+  },
+  {
+    "id": 94,
+    "title": "電腦網路封包傳輸",
+    "category": "資訊科技",
+    "description": "配置電腦、路由器與網路節點，觀察封包從來源到目的地的路徑。",
+    "requirements": "支援節點失效、延遲與簡化路由選擇，說明 TCP/IP 與實際網路的差異。"
+  },
+  {
+    "id": 95,
+    "title": "網路釣魚辨識挑戰",
+    "category": "資訊科技",
+    "description": "從模擬電子郵件、簡訊與登入頁面判斷可疑訊息。",
+    "requirements": "以安全的虛構案例提供可疑線索標記、解析及資訊安全建議。"
+  },
+  {
+    "id": 96,
+    "title": "AI 提示詞比較實驗室",
+    "category": "資訊科技",
+    "description": "選擇角色、任務、條件、格式及限制，對照不同提示詞品質。",
+    "requirements": "使用固定案例和明示的評量規準比較提示詞，不虛構真實 AI 模型回應。"
+  },
+  {
+    "id": 97,
+    "title": "圖書分類與館藏探索",
+    "category": "圖書資訊",
+    "description": "輸入書籍主題，練習分類、主題標引、檢索詞及書架定位。",
+    "requirements": "使用正確圖書分類原則，資料與館藏位置以示範值標示。"
+  },
+  {
+    "id": 98,
+    "title": "引用格式與學術誠信",
+    "category": "圖書資訊",
+    "description": "選擇書籍、網站或期刊資訊，即時生成參考文獻並檢查引用完整性。",
+    "requirements": "提供 APA 等格式的版本標示、必要欄位驗證與抄襲案例辨識。"
+  },
+  {
+    "id": 99,
+    "title": "論證結構互動分析",
+    "category": "語文與思辨",
+    "description": "將主張、理由、證據、反例及反駁拖曳或分類成論證圖。",
+    "requirements": "支援檢查證據是否支持主張、辨識常見謬誤及論證修正。"
+  },
+  {
+    "id": 100,
+    "title": "課表最佳化排程挑戰",
+    "category": "數學與資訊",
+    "description": "輸入課程、時段、教師與教室限制，安排沒有衝堂的課表。",
+    "requirements": "提供可執行的排程檢查、衝突警示、可行方案與限制式最佳化概念。"
+  }
+]</script><script>
+const DATA=JSON.parse(document.getElementById('dataset').textContent);
+const BASE=`你是一位精通臺灣高中課程、教學設計、資訊視覺化及互動介面的專家。請直接在目前 ChatGPT 對話中建立真正可操作的「智慧介面」，不要只提供原始程式碼、設計說明或靜態圖片。使用繁體中文與臺灣用語、明亮現代配色、清楚易讀的文字及支援手機、平板、電腦的版面。依主題選擇真正有效的按鈕、滑桿、選擇器、圖表、即時數值、SVG 與動畫，不能加入無意義控制。必須包含：①主題介紹和學習目標，②清楚的操作說明，③真正能改變結果的核心互動，④數學公式或規則解析，⑤至少三個探究問題，⑥三題自我檢測（含答案與解析），⑦學習回饋與重設功能。數學與科學運算須正確；涉及模型請明示假設與限制，涉及史實、法律、場館、規則或外部數據請查證並列出可信來源。請直接產出完整可用的互動介面。`;
+const promptFor=(x)=>`${BASE}\n\n【範例編號】${String(x.id).padStart(3,'0')}\n【主題】${x.title}\n【所屬領域】${x.category}\n【核心互動】${x.description}\n【專屬功能與驗收標準】${x.requirements}\n\n請確保每個互動選項都能正常操作、結果能即時更新，提供符合臺灣高中教學情境的說明、例題與探究活動。`;
+const STORE='smart100_teacher_v1';let state={fav:[],planned:[],selected:1,dark:false,draft:{},checks:[]};try{state={...state,...JSON.parse(localStorage.getItem(STORE)||'{}')}}catch(e){}let page=0;const PER=8;const $=s=>document.querySelector(s);const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const save=()=>{try{localStorage.setItem(STORE,JSON.stringify(state))}catch(e){toast('瀏覽器不允許保存，請使用資料備份功能')}};
+function toast(msg){const e=$('#toast');e.textContent=msg;e.classList.remove('hidden');clearTimeout(window.tid);window.tid=setTimeout(()=>e.classList.add('hidden'),2600)}
+function cats(){return [...new Set(DATA.map(x=>x.category))]}function initialize(){for(const c of cats())$('#category').insertAdjacentHTML('beforeend',`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`);$('#countCat').textContent=cats().length;$('#countAll').textContent=DATA.length;$('#search').addEventListener('input',()=>{page=0;render()});$('#category').addEventListener('change',()=>{page=0;render()});$('#view').addEventListener('change',()=>{page=0;render()});if(state.dark)document.body.classList.add('dark');for(const id of ['lessonName','lessonGoal','lessonAssessment'])$('#'+id).value=state.draft[id]||'';$('#lessonTime').value=state.draft.lessonTime||'1 節（50 分）';renderRubric();render()}
+function filtered(){const q=$('#search').value.trim().toLowerCase(),c=$('#category').value,v=$('#view').value;return DATA.filter(x=>(!c||x.category===c)&&(!q||[x.title,x.category,x.description,x.requirements,String(x.id)].join(' ').toLowerCase().includes(q))&&(v==='all'||(v==='favorites'&&state.fav.includes(x.id))||(v==='planned'&&state.planned.includes(x.id))||(v==='new'&&x.id>=71)))}
+function selectItem(id){state.selected=id;save();render();if(innerWidth<=1040)$('#detail').scrollIntoView({behavior:'smooth',block:'start'})}
+function toggleList(which,id){const list=state[which],at=list.indexOf(id);if(at>=0)list.splice(at,1);else list.push(id);save();render()}
+function render(){const arr=filtered();page=Math.min(page,Math.max(0,Math.ceil(arr.length/PER)-1));$('#countFiltered').textContent=arr.length;$('#countFav').textContent=state.fav.length;$('#countPlan').textContent=state.planned.length;$('#range').textContent=arr.length?`第 ${page*PER+1}–${Math.min(arr.length,(page+1)*PER)} / ${arr.length} 筆`:'沒有符合的範例';$('#cards').innerHTML=arr.slice(page*PER,(page+1)*PER).map(x=>`<article class="tile"><div><span class="tag">#${String(x.id).padStart(3,'0')}　${escapeHtml(x.category)}</span></div><h3>${escapeHtml(x.title)}</h3><p>${escapeHtml(x.description)}</p><div class="buttons"><button class="btn primary" onclick="selectItem(${x.id})">📖 查看提示詞</button><button class="btn" onclick="toggleList('fav',${x.id})" aria-label="${state.fav.includes(x.id)?'取消收藏':'收藏'}">${state.fav.includes(x.id)?'★ 已收藏':'☆ 收藏'}</button><button class="btn" onclick="toggleList('planned',${x.id})">${state.planned.includes(x.id)?'✓ 已備課':'＋加入備課'}</button></div></article>`).join('')||'<div class="panel">無符合範例，請調整搜尋條件。</div>';$('#pagerInfo').textContent=`${arr.length?page+1:0} / ${Math.max(1,Math.ceil(arr.length/PER))} 頁`;$('#prev').disabled=page===0;$('#next').disabled=(page+1)*PER>=arr.length;let item=DATA.find(x=>x.id===state.selected)||DATA[0];$('#detail').innerHTML=`<span class="tag">#${String(item.id).padStart(3,'0')}　${escapeHtml(item.category)}</span><h2>${escapeHtml(item.title)}</h2><p class="small">完整操作型提示詞與教學需求</p><section><h3>🎯 核心互動</h3><p>${escapeHtml(item.description)}</p></section><section><h3>🧪 功能要求與驗收</h3><p>${escapeHtml(item.requirements)}</p></section><section><h3>📝 完整實作提示詞</h3><div class="prompt" id="fullPrompt">${escapeHtml(promptFor(item))}</div></section><div class="buttons" style="margin-top:15px"><button class="btn primary" onclick="copyPrompt(${item.id})">📋 複製提示詞</button><button class="btn teal" onclick="openChat(${item.id})">🚀 複製並開啟 ChatGPT</button><button class="btn" onclick="downloadOne(${item.id})">⬇ TXT 匯出</button><button class="btn" onclick="toggleList('fav',${item.id})">${state.fav.includes(item.id)?'★ 取消收藏':'☆ 收藏'}</button><button class="btn" onclick="toggleList('planned',${item.id})">${state.planned.includes(item.id)?'✓ 移出備課':'＋ 加入備課'}</button></div><section><h3>🏫 教師課堂運用</h3><p>引入生活問題 → 學生先預測 → 操作關鍵變因 → 記錄與比較結果 → 驗證模型假設 → 完成三題測驗及反思。</p><p class="small">建議先由教師檢核生成結果的正確性及操作效果，再提供給學生。此網站展示的是提示詞，實際教學介面需由 ChatGPT 生成。</p></section>`;$('#plannedNames').textContent=state.planned.length?'已選範例：'+DATA.filter(x=>state.planned.includes(x.id)).map(x=>x.title).join('、'):'尚未加入備課範例。'}
+function goPage(n){page+=n;render();$('#catalog').scrollIntoView({behavior:'smooth'})}function randomPick(){const x=DATA[Math.floor(Math.random()*DATA.length)];selectItem(x.id)}function setView(v){$('#view').value=v;page=0;render();$('#catalog').scrollIntoView({behavior:'smooth'})}
+async function copyText(t){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(t)}else{const el=document.createElement('textarea');el.value=t;el.style.position='fixed';el.style.opacity='0';document.body.appendChild(el);el.select();if(!document.execCommand('copy'))throw Error('no copy');el.remove()}toast('已複製，請貼到 ChatGPT')}catch(e){toast('無法自動複製，請手動選取提示詞')}}function copyPrompt(id){copyText(promptFor(DATA[id-1]))}function openChat(id){copyPrompt(id);window.open('https://chatgpt.com/','_blank','noopener,noreferrer')}
+function download(content,name,type='text/plain;charset=utf-8'){const blob=new Blob(['\ufeff',content],{type});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);toast('檔案已準備匯出')}
+function downloadOne(id){const x=DATA[id-1];download(promptFor(x),`智慧介面_${String(id).padStart(3,'0')}_${x.title}.txt`)}function exportPrompts(scope){const arr=scope==='all'?DATA:filtered();download(arr.map(x=>'='.repeat(64)+'\n'+promptFor(x)).join('\n\n'),`智慧介面_${scope==='all'?'100例完整提示詞':'篩選提示詞'+arr.length+'例'}.txt`)}function exportCSV(){const q=s=>'"'+String(s).replaceAll('"','""')+'"';const rows=[['編號','分類','主題','核心互動','功能要求','完整提示詞'],...filtered().map(x=>[x.id,x.category,x.title,x.description,x.requirements,promptFor(x)])];download(rows.map(row=>row.map(q).join(',')).join('\r\n'),'智慧介面_提示詞清單.csv','text/csv;charset=utf-8')}
+function saveDraft(){state.draft={lessonName:$('#lessonName').value,lessonTime:$('#lessonTime').value,lessonGoal:$('#lessonGoal').value,lessonAssessment:$('#lessonAssessment').value};save()}function exportLesson(){saveDraft();const d=state.draft;const arr=DATA.filter(x=>state.planned.includes(x.id));const body=`智慧介面教師教案草稿\n課程名稱：${d.lessonName||'未填'}\n教學時間：${d.lessonTime||'未填'}\n學習目標：${d.lessonGoal||'未填'}\n評量方式：${d.lessonAssessment||'未填'}\n\n教學流程建議：導入與預測 → 示範 → 學生操作 → 討論查核 → 評量反思\n\n備課範例（${arr.length}項）\n\n`+arr.map(promptFor).join('\n\n'+'='.repeat(40)+'\n\n');download(body,'智慧介面_教師備課教案.txt')}
+function exportBackup(){download(JSON.stringify({version:1,savedAt:new Date().toISOString(),state},null,2),'智慧介面100例_個人備份.json','application/json;charset=utf-8')}
+async function importBackup(el){const f=el.files[0];if(!f)return;try{const data=JSON.parse(await f.text());if(!data.state||!Array.isArray(data.state.fav)||!Array.isArray(data.state.planned))throw Error('format');state={...state,...data.state,fav:data.state.fav.filter(n=>Number.isInteger(n)&&n>=1&&n<=100),planned:data.state.planned.filter(n=>Number.isInteger(n)&&n>=1&&n<=100)};save();location.reload()}catch(e){toast('備份格式不正確')}finally{el.value=''}}
+const criteria=['核心互動有效，控制項能改變結果','數據、公式、史實與法規有查核依據','模型假設、限制與不確定性清楚','學習目標、探究問題與活動相符','具有解析、回饋及形成性評量','繁體中文、字級、對比與手機易用性'];function renderRubric(){state.checks=Array.isArray(state.checks)?state.checks:[];$('#rubric').innerHTML=criteria.map((t,i)=>`<label class="checkbox" style="margin:13px 0"><input type="checkbox" ${state.checks.includes(i)?'checked':''} onchange="checkCriterion(${i},this.checked)"><span>${escapeHtml(t)}</span></label>`).join('');$('#qualityScore').textContent=`已通過 ${state.checks.length} / ${criteria.length} 項檢核（僅作為自評記錄）`}function checkCriterion(i,v){state.checks=v?[...new Set([...state.checks,i])]:state.checks.filter(x=>x!==i);save();renderRubric()}function resetRubric(){state.checks=[];save();renderRubric()}function toggleDark(){state.dark=!state.dark;document.body.classList.toggle('dark',state.dark);save()}function printCurrent(){window.print()};initialize();
+</script></body></html>
